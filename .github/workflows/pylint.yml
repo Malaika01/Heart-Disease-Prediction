@@ -22,6 +22,5 @@ jobs:
     
     - name: Analysing the code with pylint
       run: |
-        pylint --disable=C0301,C0303,C0114,C0103,C0413,C0209,C0200 $(git ls-files '*.py')
-        pylint: disable=unnecessary-comprehension
+        pylint --disable=C0301,C0303,C0114,C0103,C0413,C0209,C0200,unnecessary-comprehension $(git ls-files '*.py')
         pylint $(git ls-files '*.py')
