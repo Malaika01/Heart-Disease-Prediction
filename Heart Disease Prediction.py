@@ -17,8 +17,6 @@ import pandas as pd
 import sklearn as sk
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
-from matplotlib.cm import rainbow
-get_ipython().run_line_magic('matplotlib', 'inline')
 warnings.filterwarnings('ignore')
 
 
