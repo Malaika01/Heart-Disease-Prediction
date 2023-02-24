@@ -20,7 +20,7 @@ jobs:
         pip install -r requirements.txt
         pip install pylint
     - name: Run Pylint
-      run: pylint --disable=C0301,C0303,C0114,C0103,C0413,R1721,C0209,C0200 $(git ls-files '*.py')
+      run: pylint --disable=C0301,C0303,C0114,C0103,C0413,C0209,C0200 $(git ls-files '*.py')
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
