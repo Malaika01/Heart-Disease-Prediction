@@ -14,7 +14,6 @@
 import warnings
 import numpy as np
 import pandas as pd
-import sklearn as sk
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 warnings.filterwarnings('ignore')
@@ -27,6 +26,11 @@ warnings.filterwarnings('ignore')
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 
 # Next, I'll import all the Machine Learning algorithms I will be using.
@@ -37,12 +41,6 @@ from sklearn.preprocessing import StandardScaler
 
 # In[3]:
 
-
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
 
 
 # ### Import dataset
@@ -252,8 +250,6 @@ plt.title('Decision Tree Classifier scores for different number of maximum featu
 
 
 print("The score for Decision Tree Classifier is {}% with {} maximum features.".format(dt_scores[17]*100, [2,4,18]))
-
-
 # #### Random Forest Classifier
 # 
 # Now, I'll use the ensemble method, Random Forest Classifier, to create the model and vary the number of estimators to see their effect.
@@ -290,16 +286,12 @@ logreg = LogisticRegression()
 logreg.fit(X_train, y_train)
 y_pred = logreg.predict(X_test)
 print('Accuracy of logistic regression classifier on test set:{:.2f}'.format(logreg.score(X_test, y_test)))
-
-
 # The maximum score is achieved when the total estimators are 100 or 500.
 
 # In[25]:
 
 
 print("The score for Random Forest Classifier is {}% with {} estimators.".format(rf_scores[1]*100, [100, 500]))
-
-
 # ### Conclusion
 # 
 # In this project, I used Machine Learning to predict whether a person is suffering from a heart disease. After importing the data, I analysed it using plots. Then, I did generated dummy variables for categorical features and scaled other features. 
