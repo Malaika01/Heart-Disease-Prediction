@@ -19,6 +19,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pylint
+    - name: Run Pylint
+      run: pylint --disable=c0301 Heart Disease Prediction.py
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
