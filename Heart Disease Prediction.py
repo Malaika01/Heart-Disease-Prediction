@@ -202,9 +202,6 @@ for i in range(len(kernels)):
 # I'll now plot a bar plot of scores for each kernel and see which performed the best.
 
 # In[17]:
-
-
-colors = rainbow(np.linspace(0, 1, len(kernels)))
 plt.bar(kernels, svc_scores, color = colors)
 for i in range(len(kernels)):
     plt.text(i, svc_scores[i], svc_scores[i])
@@ -277,7 +274,6 @@ for i in estimators:
 # In[23]:
 
 
-colors = rainbow(np.linspace(0, 1, len(estimators)))
 plt.bar([i for i in range(len(estimators))], rf_scores, color = colors, width = 0.8)
 for i in range(len(estimators)):
     plt.text(i, rf_scores[i], rf_scores[i])
