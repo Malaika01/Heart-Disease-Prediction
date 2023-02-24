@@ -202,7 +202,7 @@ for i in range(len(kernels)):
 # I'll now plot a bar plot of scores for each kernel and see which performed the best.
 
 # In[17]:
-plt.bar(kernels, svc_scores, color = colors)
+plt.bar(kernels, svc_scores)
 for i in range(len(kernels)):
     plt.text(i, svc_scores[i], svc_scores[i])
 plt.xlabel('Kernels')
@@ -274,7 +274,7 @@ for i in estimators:
 # In[23]:
 
 
-plt.bar([i for i in range(len(estimators))], rf_scores, color = colors, width = 0.8)
+plt.bar([i for i in range(len(estimators))], rf_scores, width = 0.8)
 for i in range(len(estimators)):
     plt.text(i, rf_scores[i], rf_scores[i])
 plt.xticks(ticks = [i for i in range(len(estimators))], labels = [str(estimator) for estimator in estimators])
