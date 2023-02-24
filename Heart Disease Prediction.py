@@ -11,14 +11,13 @@
 
 # In[1]:
 
-
+import warnings
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.cm import rainbow
 get_ipython().run_line_magic('matplotlib', 'inline')
-import warnings
 warnings.filterwarnings('ignore')
 
 
@@ -44,6 +43,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 
 
 # ### Import dataset
@@ -291,7 +291,6 @@ plt.title('Random Forest Classifier scores for different number of estimators')
 # In[24]:
 
 
-from sklearn.linear_model import LogisticRegression
 logreg = LogisticRegression()
 logreg.fit(X_train, y_train)
 y_pred = logreg.predict(X_test)
