@@ -165,10 +165,10 @@ for k in range(1,21):
 # In[14]:
 
 
-plt.plot([k for k in range(1, 21)], knn_scores, color = 'red')
+plt.plot([k for k in range(1, 21)], knn_scores, color = 'red') # pylint: disable=unnecessary-comprehension
 for i in range(1,21):
     plt.text(i, knn_scores[i-1], (i, knn_scores[i-1]))
-plt.xticks([i for i in range(1, 21)])
+plt.xticks([i for i in range(1, 21)]) # pylint: disable=unnecessary-comprehension
 plt.xlabel('Number of Neighbors (K)')
 plt.ylabel('Scores')
 plt.title('K Neighbors Classifier scores for different K values')
@@ -235,10 +235,10 @@ for i in range(1, len(X.columns) + 1):
 # In[20]:
 
 
-plt.plot([i for i in range(1, len(X.columns) + 1)], dt_scores, color = 'green')
+plt.plot([i for i in range(1, len(X.columns) + 1)], dt_scores, color = 'green') # pylint: disable=unnecessary-comprehension
 for i in range(1, len(X.columns) + 1):
     plt.text(i, dt_scores[i-1], (i, dt_scores[i-1]))
-plt.xticks([i for i in range(1, len(X.columns) + 1)])
+plt.xticks([i for i in range(1, len(X.columns) + 1)]) # pylint: disable=unnecessary-comprehension
 plt.xlabel('Max features')
 plt.ylabel('Scores')
 plt.title('Decision Tree Classifier scores for different number of maximum features')
@@ -270,10 +270,10 @@ for i in estimators:
 # In[23]:
 
 
-plt.bar([i for i in range(len(estimators))], rf_scores, width = 0.8)
+plt.bar([i for i in range(len(estimators))], rf_scores, width = 0.8) # pylint: disable=unnecessary-comprehension
 for i in range(len(estimators)):
     plt.text(i, rf_scores[i], rf_scores[i])
-plt.xticks(ticks = [i for i in range(len(estimators))], labels = [str(estimator) for estimator in estimators])
+plt.xticks(ticks = [i for i in range(len(estimators))], labels = [str(estimator) for estimator in estimators]) # pylint: disable=unnecessary-comprehension
 plt.xlabel('Number of estimators')
 plt.ylabel('Scores')
 plt.title('Random Forest Classifier scores for different number of estimators')
